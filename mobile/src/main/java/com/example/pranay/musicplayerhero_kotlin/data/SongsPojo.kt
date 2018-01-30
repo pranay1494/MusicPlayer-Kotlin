@@ -18,4 +18,5 @@ class SongsPojo {
     var duration: Long = 0
     var isPalying: Boolean = false
     var dateAdded: String? = null
+    var albumArtturi: String? = null
 }

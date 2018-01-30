@@ -4,6 +4,7 @@ import android.database.Cursor
 import android.provider.MediaStore
 import com.example.pranay.musicplayerhero_kotlin.MusicBaseActivity
 import com.example.pranay.musicplayerhero_kotlin.contracts.MusicLoadingContract
+import com.example.pranay.musicplayerhero_kotlin.data.AlbumPojo
 import com.example.pranay.musicplayerhero_kotlin.data.MusicPOJO
 import com.example.pranay.musicplayerhero_kotlin.data.SongsPojo
 
@@ -33,6 +34,31 @@ class MusicLoadingPresenter : MusicLoadingContract.MusicLoadingPresenter{
             }
         }
         view.getUpdatedMusicData(musicData)
+        data?.close()
+    }
+
+    override fun populateAlbumList(data: Cursor?, musicData: MusicPOJO) {
+        val albums = ArrayList<AlbumPojo>()
+        if (data != null && data.count > 0){
+            data.moveToFirst()
+            while (data.moveToNext()){
+                val albumPojo = AlbumPojo()
+                setAlbum(data,albumPojo)
+                albums.add(albumPojo)
+            }
+        }
+        view.getUpdatedAlbumList(albums)
+        data?.close()
+    }
+
+    private fun setAlbum(cursor: Cursor,albumPojo : AlbumPojo) {
+
+        albumPojo.id = (cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Albums._ID)))
+        albumPojo.albumName = (cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Albums.ALBUM)))
+        albumPojo.artist = (cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Albums.ARTIST)))
+        albumPojo.albumArtUri = (cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Albums.ALBUM_ART)))
+        albumPojo.numberOfSongs = (Integer.parseInt(cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Albums.NUMBER_OF_SONGS))))
+
     }
 
     private fun setSongs(songs: SongsPojo, cursor: Cursor) {

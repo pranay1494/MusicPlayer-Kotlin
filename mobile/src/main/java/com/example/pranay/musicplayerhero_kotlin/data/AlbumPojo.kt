@@ -16,5 +16,5 @@ class AlbumPojo {
     var albumName: String? = null
     var albumArtUri: String? = null
     var albumID: Long? = null
-    private val albumSongsList = ArrayList<SongsPojo>()
+    var albumSongsList = ArrayList<SongsPojo>()
 }

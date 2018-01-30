@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MusicPlayerHero-Kotlin</string>
+    <string name="music_player">Music Player</string>
 </resources>
