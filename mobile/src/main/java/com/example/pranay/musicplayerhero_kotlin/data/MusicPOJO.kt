@@ -1,5 +1,6 @@
 package com.example.pranay.musicplayerhero_kotlin.data
 
+import java.io.Serializable
 import java.util.ArrayList
 
 /**
@@ -10,7 +11,7 @@ import java.util.ArrayList
  * Driver model
  *
  */
-class MusicPOJO {
+class MusicPOJO : Serializable{
     var songsList = ArrayList<SongsPojo>()
     var albums = ArrayList<AlbumPojo>()
     var nowPlayingList = ArrayList<SongsPojo>()

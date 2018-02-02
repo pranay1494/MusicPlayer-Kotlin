@@ -1,12 +1,13 @@
 package com.example.pranay.musicplayerhero_kotlin.data;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by Pranay on 18/05/2017.
  */
 
-public class PlaylistPojo
+public class PlaylistPojo implements Serializable
 {
     private String name;
     private ArrayList<SongsPojo> songs = new ArrayList<>();

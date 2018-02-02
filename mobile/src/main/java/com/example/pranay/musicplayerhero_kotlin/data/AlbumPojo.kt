@@ -1,5 +1,6 @@
 package com.example.pranay.musicplayerhero_kotlin.data
 
+import java.io.Serializable
 import java.util.ArrayList
 
 /**
@@ -9,7 +10,7 @@ import java.util.ArrayList
 /**
  * Model for albums based songs.
  */
-class AlbumPojo {
+class AlbumPojo :Serializable{
     var id: String? = null
     var artist: String? = null
     var numberOfSongs: Int = 0

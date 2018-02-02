@@ -1,5 +1,7 @@
 package com.example.pranay.musicplayerhero_kotlin.data
 
+import java.io.Serializable
+
 /**
  * Created by Pranay on 17-02-2017.
  */
@@ -7,7 +9,7 @@ package com.example.pranay.musicplayerhero_kotlin.data
 /**
  * songs main model
  */
-class SongsPojo {
+class SongsPojo:Serializable {
     var title: String? = null
     var artist: String? = null
     var path: String? = null

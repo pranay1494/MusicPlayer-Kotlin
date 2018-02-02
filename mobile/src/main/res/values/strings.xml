@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">MusicPlayerHero-Kotlin</string>
     <string name="music_player">Music Player</string>
+    <string name="All_Songs">All Songs</string>
+    <string name="Albums">Albums</string>
+    <string name="Playlist">Playlist</string>
+    <string name="recently_added_tracks">Recently Added Tracks</string>
+    <string name="all_tracks">All Tracks</string>
 </resources>

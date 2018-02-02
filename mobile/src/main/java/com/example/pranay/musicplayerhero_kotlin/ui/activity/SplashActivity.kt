@@ -8,6 +8,7 @@ import android.util.Log
 import android.widget.Toast
 import com.example.pranay.musicplayerhero_kotlin.MusicBaseActivity
 import com.example.pranay.musicplayerhero_kotlin.R
+import com.example.pranay.musicplayerhero_kotlin.constants.Constants
 import org.jetbrains.anko.alert
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.startActivity
@@ -27,7 +28,7 @@ class SplashActivity : MusicBaseActivity(){
     inner class MyHandler : Handler() {
         override fun handleMessage(msg: Message?) {
             super.handleMessage(msg)
-            startActivity<TabActivity>()
+            startActivity<TabActivity>(Constants.MUSIC_OBJECT to musicData)
         }
     }
 }

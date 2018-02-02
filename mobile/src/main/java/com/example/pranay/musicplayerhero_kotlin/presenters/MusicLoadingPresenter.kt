@@ -1,5 +1,6 @@
 package com.example.pranay.musicplayerhero_kotlin.presenters
 
+import android.app.Activity
 import android.database.Cursor
 import android.provider.MediaStore
 import com.example.pranay.musicplayerhero_kotlin.MusicBaseActivity
@@ -15,8 +16,8 @@ class MusicLoadingPresenter : MusicLoadingContract.MusicLoadingPresenter{
 
     lateinit var view:MusicBaseActivity
 
-    override fun onAttach(activity: MusicBaseActivity) {
-        view = activity
+    override fun onAttach(activity: Activity) {
+        view = activity as MusicBaseActivity
     }
 
     override fun onDetach() {
